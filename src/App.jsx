@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1>A blog web with ALOK</h1>
+      <h1>Blog with Appwrite</h1>
     </>
   )
 }
