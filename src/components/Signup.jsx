@@ -47,15 +47,16 @@ function signup() {
                   {...register("name", {required: true,})}
                 />
                 <Input
-                    label="Email: "
-                    placeholder="Enter Your email"
-                    type="email"
-                    {...register("email"), {
-                        required: true,
-                        validate: {
-                            matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address",
-                        }
-                    }}
+                label="Email: "
+                placeholder="Enter your email"
+                type="email"
+                {...register("email", {
+                    required: true,
+                    validate: {
+                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        "Email address must be a valid address",
+                    }
+                })}
                 />
                 <Input
                 label="password: "
