@@ -28,7 +28,7 @@ const router = createBrowserRouter([
           <AuthLayout authentication={false}>
             <Login/>
           </AuthLayout>
-        )
+        ),
       },
       {
         path: "/signup",
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/post/:slug",
-        element: <Post />
+        element: <Post />,
       },
     ],
   },
