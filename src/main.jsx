@@ -7,26 +7,26 @@ import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import { AuthLayout, Login} from './components/index.js'
-import Signup from './pages/Signup.jsx'
-import EditPost from './pages/EditPost.jsx'
-import AllPosts from "./pages/AllPosts.jsx"
-import AddPost from "./pages/AddPost.jsx"
-import Post from './pages/Post.jsx'
+import Signup from './pages/Signup'
+import EditPost from './pages/EditPost'
+import AllPosts from "./pages/AllPosts"
+import AddPost from "./pages/AddPost"
+import Post from './pages/Post'
 
 const router = createBrowserRouter([
   {
     path : '/',
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: '/',
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/login",
         element: (
           <AuthLayout authentication={false}>
-            <Login/>
+            <Login />
           </AuthLayout>
         ),
       },
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         path: "/signup",
         element: (
           <AuthLayout authentication={false}>
-            <Signup/>
+            <Signup />
           </AuthLayout>
         ),
       },
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <AllPosts/>
+            <AllPosts />
           </AuthLayout>
         ),
       },
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <AddPost/>
+            <AddPost />
           </AuthLayout>
         ),
       },
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <EditPost/>
+            <EditPost />
           </AuthLayout>
         ),
       },
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         element: <Post />,
       },
     ],
-  },
+},
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

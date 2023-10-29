@@ -15,7 +15,7 @@ export default function PostForm({post}) {
         },
     });
     const navigate = useNavigate();
-    const userData = useSelector(state => state.auth.userData);
+    const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
         if(post) {
@@ -31,12 +31,12 @@ export default function PostForm({post}) {
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
-            const file =  await appwriteService.uploadFile(data.image[0]);
+            const file = await appwriteService.uploadFile(data.image[0]);
 
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id});
+                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
                 }
@@ -53,13 +53,13 @@ export default function PostForm({post}) {
             .replace(/\s/g, '-');
         }
 
-            return '';
+        return '';
     }, []);
 
     React.useEffect(() => {
         const subscription = watch((value, {name}) => {
             if (name === 'title') {
-                setValue('slug', slugTransform(value.title, {shouldValidate: true}));
+                setValue('slug', slugTransform(value.title), {shouldValidate: true});
             }
         });
 
