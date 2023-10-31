@@ -18,11 +18,10 @@ export default function RTE({name, control, label, defaultValue = ""}) {
           height: 500,
           menubar: true,
           plugins: [
-            'advlist autolink link image lists charmap print preview hr anchor pagebreak',
-            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-            'table emoticons template paste help'
+            "image", "advlist", "autolink", "lists", "link", "image", "charmap", "preview", "anchor",
+            "searchreplace", "visualblocks", "code", "fullscreen", "insertdatetime", "media", "table", "code", "help", "wordcount", "anchor",
           ],
-          toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+          toolbar: "undo redo | blocks | bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons",
           content_style: "body { font-family: Helvetica, Arial,sans-serif; font-size:14px }"
         }}
         onEditorChange={onChange}
